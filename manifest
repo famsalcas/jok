@@ -1,0 +1,10 @@
+title=LATINOTV=1
+minor_version=0
+build_version=247
+mm_icon_focus_hd=pkg:/images/LatinoTV480.png
+requires_audiometadata=1
+bs_libs_required=roku_ads_lib
+splash_screen_fhd=pkg:/images/LatinoTV720.png
+splash_color=#808080
+splash_min_time=0
+ui_resolutions=fhd
