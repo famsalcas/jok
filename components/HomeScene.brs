@@ -1,4 +1,3 @@
-
 ' ********** Copyright 2016 Roku Corp.  All Rights Reserved. **********
 
 Sub init()
@@ -16,8 +15,9 @@ Sub init()
     m.Hint.font.size = "20"
     showHint()
     
+    ' Test if loadConfig exists before calling
     m.array = loadConfig()
-    if m.array.count() = 1
+    if m.array <> Invalid and m.array.count() = 1
         m.BottomBar.visible = false
         m.Video.setFocus(true)
     end if
@@ -27,8 +27,6 @@ Sub init()
     m.LoadTask = createObject("roSGNode", "RowListContentTask")
     m.LoadTask.observeField("content", "rowListContentChanged")
     m.LoadTask.control = "RUN"
-
-
     m.RowList.setFocus(true)
     m.RowList.rowLabelFont.size = "24"
     
@@ -43,7 +41,7 @@ Sub change()
     m.global.Adtracker = 0
 End Sub
 
-Sub  hideHint()
+Sub hideHint()
     m.Hint.visible = false
 End Sub
 
@@ -54,12 +52,12 @@ End Sub
 
 Sub hideBarTimer()
     m.TimerHideBar.control = "start"
-     if m.TimerHideBar.control = 120 
-       m.global.Options = 0
-       m.HideBar.control = "start"
-       m.Video.setFocus(true)
-       showHint()    
-     end if   
+    if m.TimerHideBar.control = "120"
+        m.global.Options = 0
+        m.HideBar.control = "start"
+        m.Video.setFocus(true)
+        showHint()    
+    end if   
 End Sub
 
 Sub optionsMenu()
@@ -74,22 +72,22 @@ Sub optionsMenu()
     End if
 End Sub
 
-function onKeyEvent(key as String, press as Boolean) as Boolean 
+Function onKeyEvent(key as String, press as Boolean) as Boolean 
     handled = false
-        if press
-           if key="back" 
-                   if m.global.Options = 0
-                        m.global.Options = 1
-                        optionsMenu()
-                   else 
-                        m.global.Options = 0
-                        optionsMenu()
-                   end if
-               handled = true
-           end if
+    if press
+        if key = "back" 
+            if m.global.Options = 0
+                m.global.Options = 1
+                optionsMenu()
+            else 
+                m.global.Options = 0
+                optionsMenu()
+            end if
+            handled = true
         end if
+    end if
     return handled
-end function
+End Function
 
 Function ChannelChange()
     m.global.AdTracker = 0
@@ -105,4 +103,3 @@ Sub rowListContentChanged()
         m.count = 1
     end if
 End Sub
-
