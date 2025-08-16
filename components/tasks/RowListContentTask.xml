@@ -2,7 +2,6 @@
 
 <!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
 
-
 <component name="RowListContentTask" extends="Task">
 
     <interface>
@@ -18,84 +17,128 @@
 			End Sub
     
 			Sub loadContent()
-				array = loadConfig()
-                                arraydos = loadConfigNovelas()
-                                arraytres = loadConfigDiscoverys()
-                                arraycuatro = loadConfigCartoons()
-                                arraycinco = loadConfigPremium()
-                                arrayseis = loadConfigPeliculas()
-                                arraysiete = loadConfigMusic()
-                                arrayocho = loadConfigPluto()
-                                arraynueve = loadConfigSports()
-                                arraydiez = loadConfig24hrs()
-                                arrayonce= loadConfigPeru()
-                                arraydoce= loadConfigMovistar()
-                                arraytrece= loadConfigNoticias()
+				array = loadConfig()                           ' 1. Canales Locales (loadConfig siempre primero)
+                arraydos = loadConfigMusica()                  ' 2. Música
+                arraytres = loadConfigReligion()               ' 3. Religión
+                arraycuatro = loadConfigEntretenimiento()      ' 4. Entretenimiento
+                arraycinco = loadConfigTurismo()               ' 5. Turismo
+                arrayseis = loadConfigRadioTv()                ' 6. Radio Tv
+                arraysiete = loadConfigDeportes()              ' 7. Deportes
+                arrayocho = loadConfigCultural()               ' 8. Cultural/Educativo
+                arraynueve = loadConfigDocumentales()          ' 9. Documentales
+                arraydiez = loadConfigEstiloVida()             ' 10. Estilo de Vida
+                arrayonce = loadConfigCanales24()              ' 11. Canales 24/7
+                arraydoce = loadConfigNovelasySeries()         ' 12. Novelas Y Series
+                arraytrece = loadConfigSeries()                ' 13. Series
+                arraycatorce = loadConfigInternacional()       ' 14. Internacional
+                arrayquince = loadConfigCine()                 ' 15. Cine
+                arraydieciseis = loadConfigPremium()           ' 16. Premium
+                arraydiecisiete = loadConfigAnime()            ' 17. Anime
+                arraydieciocho = loadConfigInfantil()          ' 18. Infantil
+                arraydiecinueve = loadConfigNoticias()         ' 19. Noticias
+                arrayveinte = loadConfigAdultos()              ' 20. Adultos
+
 			    oneRow = GetApiArray(array)
-                            tworow = GetApiArraydos(arraydos)
-                            threerow = GetApiArraytres(arraytres)
-                            fourrow = GetApiArraycuatro(arraycuatro)
-                            fiverow = GetApiArraycinco(arraycinco)
-                            sixrow = GetApiArrayseis(arrayseis)
-                            sevenrow = GetApiArraysiete(arraysiete)
-                            eihtrow = GetApiArrayocho(arrayocho) 
-                            ninerow = GetApiArraynueve(arraynueve) 
-                            tenrow = GetApiArraydiez(arraydiez)  
-                            elevenrow = GetApiArrayonce(arrayonce)
-                            twelverow = GetApiArraydoce(arraydoce)
-                            thirteenrow = GetApiArraytrece(arraytrece)
+                tworow = GetApiArraydos(arraydos)
+                threerow = GetApiArraytres(arraytres)
+                fourrow = GetApiArraycuatro(arraycuatro)
+                fiverow = GetApiArraycinco(arraycinco)
+                sixrow = GetApiArrayseis(arrayseis)
+                sevenrow = GetApiArraysiete(arraysiete)
+                eihtrow = GetApiArrayocho(arrayocho) 
+                ninerow = GetApiArraynueve(arraynueve) 
+                tenrow = GetApiArraydiez(arraydiez)  
+                elevenrow = GetApiArrayonce(arrayonce)
+                twelverow = GetApiArraydoce(arraydoce)
+                thirteenrow = GetApiArraytrece(arraytrece)
+                fourteenrow = GetApiArraycatorce(arraycatorce)
+                fifteenrow = GetApiArrayquince(arrayquince)
+                sixteenrow = GetApiArraydieciseis(arraydieciseis)
+                seventeenrow = GetApiArraydiecisiete(arraydiecisiete)
+                eighteenrow = GetApiArraydieciocho(arraydieciocho)
+                nineteenrow = GetApiArraydiecinueve(arraydiecinueve)
+                twentyrow = GetApiArrayveinte(arrayveinte)
+
 			    list = [
 			        {
-			            Title:"My Channels"
+			            Title:"Canales Locales"
 			            ContentList : oneRow
 			        }
-                                {
-			            Title:"My Channels"
+                    {
+			            Title:"Música"
 			            ContentList : twoRow
 			        }
-                                {
-			            Title:"My Channels"
+                    {
+			            Title:"Religión"
 			            ContentList : threerow
 			        }
-                                {
-			            Title:"My Channels"
+                    {
+			            Title:"Entretenimiento"
 			            ContentList : fourrow
 			        }
-                                {
-			            Title:"My Channels"
+                    {
+			            Title:"Turismo"
 			            ContentList : fiverow
 			        }
-                                {
-			            Title:"My Channels"
+                    {
+			            Title:"Radio Tv"
 			            ContentList : sixrow
 			        }
-                                {
-			            Title:"My Channels"
+                    {
+			            Title:"Deportes"
 			            ContentList : sevenrow
 			        }
-                                {
-			            Title:"My Channels"
+                    {
+			            Title:"Cultural/Educativo"
 			            ContentList : eihtrow
 			        }
-                                {
-			            Title:"My Channels"
+                    {
+			            Title:"Documentales"
 			            ContentList : ninerow
 			        }
-                                {
-			            Title:"My Channels"
+                    {
+			            Title:"Estilo de Vida"
 			            ContentList : tenrow
 			        }
-                                {
-			            Title:"My Channels"
-			            ContentList : twelverow
-			        }
-                                {
-			            Title:"My Channels"
+                    {
+			            Title:"Canales 24/7"
 			            ContentList : elevenrow
 			        }
-                                {
-			            Title:"My Channels"
+                    {
+			            Title:"Novelas Y Series"
+			            ContentList : twelverow
+			        }
+                    {
+			            Title:"Series"
 			            ContentList : thirteenrow
+			        }
+                    {
+			            Title:"Internacional"
+			            ContentList : fourteenrow
+			        }
+                    {
+			            Title:"Cine"
+			            ContentList : fifteenrow
+			        }
+                    {
+			            Title:"Premium"
+			            ContentList : sixteenrow
+			        }
+                    {
+			            Title:"Anime"
+			            ContentList : seventeenrow
+			        }
+                    {
+			            Title:"Infantil"
+			            ContentList : eighteenrow
+			        }
+                    {
+			            Title:"Noticias"
+			            ContentList : nineteenrow
+			        }
+                    {
+			            Title:"Adultos"
+			            ContentList : twentyrow
 			        }
 			    ]                            
 			    m.top.content = ParseXMLContent(list)
@@ -119,7 +162,6 @@
 			    return RowItems
 			End Function
 			
-			
 			Function GetApiArray(array as Object)
 			    result = []
 			    for each element in array
@@ -128,15 +170,15 @@
 			    	item.streamFormat = element.streamFormat
 			    	item.HDPosterUrl = element.Logo
 			    	item.Url = element.Stream
-                                item.HttpCertificatesFile = element.UserAgent
-                                item.HttpCookies = element.Cache
-                                item.Live = element.Live			    	
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.HttpCookies = element.Cache
+                    item.Live = element.Live			    	
 			        result.push(item)
 			    end for
 			    return result
 			End Function
 
-                        Function GetApiArraydos(arraydos as Object)
+            Function GetApiArraydos(arraydos as Object)
 			    result = []
 			    for each element in arraydos
 			    	item = {}
@@ -144,14 +186,14 @@
 			    	item.streamFormat = element.streamFormat
 			    	item.HDPosterUrl = element.Logo
 			    	item.Url = element.Stream
-                                item.HttpCertificatesFile = element.UserAgent
-                                item.Live = element.Live
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.Live = element.Live
 			        result.push(item)
 			    end for
 			    return result
 			End Function
 
-                       Function GetApiArraytres(arraytres as Object)
+            Function GetApiArraytres(arraytres as Object)
 			    result = []
 			    for each element in arraytres
 			    	item = {}
@@ -159,8 +201,8 @@
 			    	item.streamFormat = element.streamFormat
 			    	item.HDPosterUrl = element.Logo
 			    	item.Url = element.Stream
-                                item.HttpCertificatesFile = element.UserAgent
-                                item.Live = element.Live
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.Live = element.Live
 			        result.push(item)
 			    end for
 			    return result
@@ -174,8 +216,8 @@
 			    	item.streamFormat = element.streamFormat
 			    	item.HDPosterUrl = element.Logo
 			    	item.Url = element.Stream
-                                item.ifSGNodeHttpAgentAccess = element.UserAgent
-                                item.Live = element.Live
+                    item.ifSGNodeHttpAgentAccess = element.UserAgent
+                    item.Live = element.Live
 			        result.push(item)
 			    end for
 			    return result
@@ -189,8 +231,8 @@
 			    	item.streamFormat = element.streamFormat
 			    	item.HDPosterUrl = element.Logo
 			    	item.Url = element.Stream
-                                item.ifSGNodeHttpAgentAccess = element.UserAgent
-                                item.Live = element.Live
+                    item.ifSGNodeHttpAgentAccess = element.UserAgent
+                    item.Live = element.Live
 			        result.push(item)
 			    end for
 			    return result
@@ -204,8 +246,8 @@
 			    	item.streamFormat = element.streamFormat
 			    	item.HDPosterUrl = element.Logo
 			    	item.Url = element.Stream
-                                item.HttpCertificatesFile = element.UserAgent
-                                item.Live = element.Live
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.Live = element.Live
 			        result.push(item)
 			    end for
 			    return result
@@ -219,8 +261,8 @@
 			    	item.streamFormat = element.streamFormat
 			    	item.HDPosterUrl = element.Logo
 			    	item.Url = element.Stream
-                                item.HttpCertificatesFile = element.UserAgent
-                                item.Live = element.Live
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.Live = element.Live
 			        result.push(item)
 			    end for
 			    return result
@@ -234,8 +276,8 @@
 			    	item.streamFormat = element.streamFormat
 			    	item.HDPosterUrl = element.Logo
 			    	item.Url = element.Stream
-                                item.HttpCertificatesFile = element.UserAgent
-                                item.Live = element.Live
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.Live = element.Live
 			        result.push(item)
 			    end for
 			    return result
@@ -249,9 +291,9 @@
 			    	item.streamFormat = element.streamFormat
 			    	item.HDPosterUrl = element.Logo
 			    	item.Url = element.Stream
-                                item.HttpCertificatesFile = element.UserAgent
-                                item.drmParams = element.drmParams
-                                item.Live = element.Live
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.drmParams = element.drmParams
+                    item.Live = element.Live
 			        result.push(item)
 			    end for
 			    return result
@@ -265,16 +307,16 @@
 			    	item.streamFormat = element.streamFormat
 			    	item.HDPosterUrl = element.Logo
 			    	item.Url = element.Stream
-                                item.HttpCertificatesFile = element.UserAgent
-                                item.drmParams = element.drmParams
-                                item.GetKeepAlive = element.GetKeepAlive
-                                item.Live = element.Live
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.drmParams = element.drmParams
+                    item.GetKeepAlive = element.GetKeepAlive
+                    item.Live = element.Live
 			        result.push(item)
 			    end for
 			    return result
 			End Function
 
-                         Function GetApiArrayonce(arrayonce as Object)
+            Function GetApiArrayonce(arrayonce as Object)
 			    result = []
 			    for each element in arrayonce
 			    	item = {}
@@ -282,8 +324,8 @@
 			    	item.streamFormat = element.streamFormat
 			    	item.HDPosterUrl = element.Logo
 			    	item.Url = element.Stream
-                                item.HttpCertificatesFile = element.UserAgent
-                                item.Live = element.Live
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.Live = element.Live
 			        result.push(item)
 			    end for
 			    return result
@@ -297,8 +339,8 @@
 			    	item.streamFormat = element.streamFormat
 			    	item.HDPosterUrl = element.Logo
 			    	item.Url = element.Stream
-                                item.HttpCertificatesFile = element.UserAgent
-                                item.Live = element.Live
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.Live = element.Live
 			        result.push(item)
 			    end for
 			    return result
@@ -312,8 +354,113 @@
 			    	item.streamFormat = element.streamFormat
 			    	item.HDPosterUrl = element.Logo
 			    	item.Url = element.Stream
-                                item.HttpCertificatesFile = element.UserAgent
-                                item.Live = element.Live
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.Live = element.Live
+			        result.push(item)
+			    end for
+			    return result
+			End Function
+
+			Function GetApiArraycatorce(arraycatorce as Object)
+			    result = []
+			    for each element in arraycatorce
+			    	item = {}
+			    	item.Title = element.Title
+			    	item.streamFormat = element.streamFormat
+			    	item.HDPosterUrl = element.Logo
+			    	item.Url = element.Stream
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.Live = element.Live
+			        result.push(item)
+			    end for
+			    return result
+			End Function
+
+			Function GetApiArrayquince(arrayquince as Object)
+			    result = []
+			    for each element in arrayquince
+			    	item = {}
+			    	item.Title = element.Title
+			    	item.streamFormat = element.streamFormat
+			    	item.HDPosterUrl = element.Logo
+			    	item.Url = element.Stream
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.Live = element.Live
+			        result.push(item)
+			    end for
+			    return result
+			End Function
+
+			Function GetApiArraydieciseis(arraydieciseis as Object)
+			    result = []
+			    for each element in arraydieciseis
+			    	item = {}
+			    	item.Title = element.Title
+			    	item.streamFormat = element.streamFormat
+			    	item.HDPosterUrl = element.Logo
+			    	item.Url = element.Stream
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.Live = element.Live
+			        result.push(item)
+			    end for
+			    return result
+			End Function
+
+			Function GetApiArraydiecisiete(arraydiecisiete as Object)
+			    result = []
+			    for each element in arraydiecisiete
+			    	item = {}
+			    	item.Title = element.Title
+			    	item.streamFormat = element.streamFormat
+			    	item.HDPosterUrl = element.Logo
+			    	item.Url = element.Stream
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.Live = element.Live
+			        result.push(item)
+			    end for
+			    return result
+			End Function
+
+			Function GetApiArraydieciocho(arraydieciocho as Object)
+			    result = []
+			    for each element in arraydieciocho
+			    	item = {}
+			    	item.Title = element.Title
+			    	item.streamFormat = element.streamFormat
+			    	item.HDPosterUrl = element.Logo
+			    	item.Url = element.Stream
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.Live = element.Live
+			        result.push(item)
+			    end for
+			    return result
+			End Function
+
+			Function GetApiArraydiecinueve(arraydiecinueve as Object)
+			    result = []
+			    for each element in arraydiecinueve
+			    	item = {}
+			    	item.Title = element.Title
+			    	item.streamFormat = element.streamFormat
+			    	item.HDPosterUrl = element.Logo
+			    	item.Url = element.Stream
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.Live = element.Live
+			        result.push(item)
+			    end for
+			    return result
+			End Function
+
+			Function GetApiArrayveinte(arrayveinte as Object)
+			    result = []
+			    for each element in arrayveinte
+			    	item = {}
+			    	item.Title = element.Title
+			    	item.streamFormat = element.streamFormat
+			    	item.HDPosterUrl = element.Logo
+			    	item.Url = element.Stream
+                    item.HttpCertificatesFile = element.UserAgent
+                    item.Live = element.Live
 			        result.push(item)
 			    end for
 			    return result
@@ -321,4 +468,3 @@
 ]]>
     </script>
 </component>
-
